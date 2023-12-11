@@ -70,7 +70,7 @@ def validate_on_data(model: Model,
             # If future prediction
             if model.future_prediction != 0:
                 # Cut to only the first frame prediction + add the counter
-                train_output= output
+                train_output= output # added by RA
                 train_output = torch.cat((train_output[:, :, :train_output.shape[2] // (model.future_prediction)], train_output[:, :, -1:]),dim=2)
                 # Cut to only the first frame prediction + add the counter
                 targets = torch.cat((targets[:, :, :targets.shape[2] // (model.future_prediction)], targets[:, :, -1:]),dim=2)
@@ -81,7 +81,7 @@ def validate_on_data(model: Model,
 
             # Add references, hypotheses and file paths to list
             valid_references.extend(targets)
-            valid_hypotheses.extend(train_output)
+            valid_hypotheses.extend(train_output) #output --> train_output
             file_paths.extend(batch.file_paths)
             # Add the source sentences to list, by using the model source vocab and batch indices
             valid_inputs.extend([[model.src_vocab.itos[batch.src[i][j]] for j in range(len(batch.src[i]))] for i in
