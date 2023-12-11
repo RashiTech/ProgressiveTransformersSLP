@@ -45,14 +45,14 @@ model:
     just_count_in: False # Flag for Just Counter Data Augmentation
     gaussian_noise: False # Flag for Gaussian Noise Data Augmentation
     noise_rate: 5 # Gaussian Noise rate
-    future_prediction: 0 # Future Prediction Data Augmentation if > 0
+    future_prediction: 5 # Future Prediction Data Augmentation if > 0
     encoder:  # Model Encoder
         type: "transformer"
         num_layers: 2 # Number of layers
         num_heads: 4  # Number of Heads
         embeddings:
             embedding_dim: 512  # Embedding Dimension
-            dropout: 0.0 # Embedding Dropout
+            dropout: 0.02 # Embedding Dropout 0.0
         hidden_size: 512 # Hidden Size Dimension
         ff_size: 2048 # Feed-forward dimension (4 x hidden_size)
         dropout: 0.0 # Encoder Dropout
@@ -65,4 +65,4 @@ model:
             dropout: 0.0 # Embedding Dropout
         hidden_size: 512 # Hidden Size Dimension
         ff_size: 2048 # Feed-forward dimension (4 x hidden_size)
-        dropout: 0.0 # Decoder Dropout
+        dropout: 0.02 # Decoder Dropout 0.0
