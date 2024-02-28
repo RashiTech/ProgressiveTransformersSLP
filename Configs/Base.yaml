@@ -45,7 +45,7 @@ model:
     just_count_in: False # Flag for Just Counter Data Augmentation
     gaussian_noise: False # Flag for Gaussian Noise Data Augmentation
     noise_rate: 5 # Gaussian Noise rate
-    future_prediction: 5 # Future Prediction Data Augmentation if > 0
+    future_prediction: 10 # Future Prediction Data Augmentation if > 0
     encoder:  # Model Encoder
         type: "transformer"
         num_layers: 2 # Number of layers
